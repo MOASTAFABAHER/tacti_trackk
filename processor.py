@@ -10,8 +10,15 @@ from collections import defaultdict
 from utils import *
 from classifiers import *
 from drawing import *
-
+from download_file import *
 def process_video(input_video_path, output_video_path):
+    download_model_if_not_exists(file_id='147f8MufseFwU_byEWAe7ejjMUNTw9Jbz', path='models/pitch_model.pt')
+    download_model_if_not_exists(file_id="1HaIOi1V9PYGcpM4Iflz6QuQ8RfdsgwaR", path="models/best.pt")
+
+    
+    # if 'models/pitch_model.pt' not in os.listdir('models'):
+    #     download_file(url_pitch, 'models/pitch_model.pt')
+    
     model = YOLO('models/best.pt')
     tracker = sv.ByteTrack()
     cap = cv2.VideoCapture(input_video_path)
@@ -38,6 +45,7 @@ def process_video(input_video_path, output_video_path):
         ret, frame = cap.read()
         if not ret or counter == 60:
             break
+        counter+=1
 
         results = model(frame)[0]
         detections = sv.Detections.from_ultralytics(results)
