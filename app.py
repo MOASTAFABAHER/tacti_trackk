@@ -31,15 +31,18 @@ def analyze_video():
         return jsonify({"error": "No video uploaded"}), 400
 
     video_file = request.files['video']
+    draw_zone_control = str(request.form.get('draw_zone_control')).lower() == 'true'
+    draw_pass_lines = str(request.form.get('draw_pass_lines')).lower() == 'true'
     input_filename = f"{uuid4()}.mp4"
-    output_filename = f"processed_{uuid4()}.mp4"
+    output_filename = f"processed_{uuid4()}.mp4"    
+    
 
     input_path = os.path.join(VIDEO_UPLOAD_FOLDER, input_filename)
     output_path = os.path.join(VIDEO_OUTPUT_FOLDER, output_filename)
 
     try:
         video_file.save(input_path)
-        process_video(input_path, output_path)
+        process_video(input_path, output_path,draw_zone_control,draw_pass_lines)
 
         if not os.path.exists(output_path):
             return jsonify({"error": "Processing failed"}), 500
@@ -48,7 +51,10 @@ def analyze_video():
         return jsonify({
             "success": True,
             "video_url": video_url,
-            "message": "Video processed successfully"
+            "message": "Video processed successfully",
+            'draw_zone_control': draw_zone_control,
+            'draw_pass_lines': draw_pass_lines
+            
         })
 
     except Exception as e:
@@ -58,6 +64,7 @@ def analyze_video():
 @app.route('/videos/<filename>')
 def get_video(filename):
     path = os.path.join(VIDEO_OUTPUT_FOLDER, filename)
+
     if not os.path.exists(path):
         return jsonify({"error": "Video not found"}), 404
     return send_file(path, mimetype='video/mp4')
@@ -74,13 +81,15 @@ def analyze_image():
     image_file = request.files['image']
     input_filename = f"{uuid4()}.jpg"
     output_filename = f"processed_{uuid4()}.jpg"
+    draw_zone_control = str(request.form.get('draw_zone_control', 'false')).lower() == 'true'
+    draw_pass_lines = str(request.form.get('draw_pass_lines', 'false')).lower() == 'true'
 
     input_path = os.path.join(IMAGE_UPLOAD_FOLDER, input_filename)
     output_path = os.path.join(IMAGE_OUTPUT_FOLDER, output_filename)
 
     try:
         image_file.save(input_path)
-        process_image(input_path, output_path)
+        process_image(input_path, output_path,draw_zone_control)
 
         if not os.path.exists(output_path):
             return jsonify({"error": "Image processing failed"}), 500
