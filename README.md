@@ -12,6 +12,8 @@
 - **Team Classification**
   - Classifies players into teams using clustering and jersey color detection techniques.
 
+![Alt text](https://github.com/MOASTAFABAHER/tacti_trackk/blob/583f2fa106dce41dd826292437ba80c55dfd1d90/team_classifer.png)
+
 - **Zone Control**
   - Divides the pitch into six tactical zones.
   - Calculates which team dominates each zone based on player distribution.
