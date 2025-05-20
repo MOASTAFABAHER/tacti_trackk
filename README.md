@@ -17,14 +17,14 @@
 - **Zone Control**
   - Divides the pitch into six tactical zones.
   - Calculates which team dominates each zone based on player distribution.
-![Alt text](https://github.com/MOASTAFABAHER/tacti_trackk/blob/19fa855fa197eb1cc085aeefabc882ac163b9d4a/zone_controll_mockup.png? "ZoneControll")
+![Alt text](https://github.com/MOASTAFABAHER/tacti_trackk/blob/19fa855fa197eb1cc085aeefabc882ac163b9d4a/zone_controll_mockup.png)
 - **Pass Line Detection**
   - Identifies all valid passing options when a player is in possession of the ball.
   - Visualizes pass lines to support decision-making analysis.
-
+![Alt text](https://github.com/MOASTAFABAHER/tacti_trackk/blob/19fa855fa197eb1cc085aeefabc882ac163b9d4a/pass_detection.png)
 - **Ball Possession Tracking**
   - Tracks and estimates ball possession over time by each team.
-
+![Alt text](https://github.com/MOASTAFABAHER/tacti_trackk/blob/19fa855fa197eb1cc085aeefabc882ac163b9d4a/team_classifer.png)
 ---
 
 ## 💻 Platforms
