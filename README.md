@@ -41,6 +41,3 @@ TactiTrak is available on:
 - **Deployment:** Desktop (Tkinter / PyQt or similar), Mobile (Flutter or React Native wrapper)
 
 ---
-
-## 📁 Project Structure
-
