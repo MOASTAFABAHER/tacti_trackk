@@ -21,10 +21,10 @@
 - **Pass Line Detection**
   - Identifies all valid passing options when a player is in possession of the ball.
   - Visualizes pass lines to support decision-making analysis.
-![Alt text](https://github.com/MOASTAFABAHER/tacti_trackk/blob/19fa855fa197eb1cc085aeefabc882ac163b9d4a/pass_detection.png)
+![Alt text](https://github.com/MOASTAFABAHER/tacti_trackk/blob/7ebf625538ded761bc2000ff41e90fba6b3e6732/pass_detection.png)
 - **Ball Possession Tracking**
   - Tracks and estimates ball possession over time by each team.
-![Alt text](https://github.com/MOASTAFABAHER/tacti_trackk/blob/19fa855fa197eb1cc085aeefabc882ac163b9d4a/team_classifer.png)
+![Alt text](https://github.com/MOASTAFABAHER/tacti_trackk/blob/583f2fa106dce41dd826292437ba80c55dfd1d90/team_classifer.png)
 ---
 
 ## 💻 Platforms
